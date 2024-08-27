@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap');
+
+/*  background image here */
+.background-image {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/words.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: brightness(50%);
+}
+
+
+/* Body styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+  /*color: #f3ecec;*/
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Heading styling */
+h1 {
+  font-weight: 900;
+  color:  #ff7b0f;
+  margin-bottom: 30px;
+  font-size: 36px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Paragraph styling */
+p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #e2af22;
+  transition: color 0.3s ease;
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Text box styling */
+.text-box {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(194, 183, 183, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #2c2c3b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA section styling */
+.cta-section {
+  background-color: #2a2a3a;
+  padding: 40px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-content {
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.cta-text {
+  flex-basis: 50%;
+  padding-right: 20px;
+}
+
+.cta-content h2 {
+  font-size: 28px;
+  color:  #ff7b0f;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.cta-content p {
+  font-size: 18px;
+  color: #d4d4d4;
+  padding-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* CTA button styling */
+.cta-button {
+  padding: 12px 24px;
+  border: none;
+  background-color:  #ff7b0f;
+  color: #2a2a3a;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color:  #ff7b0f;
+  transform: scale(1.1);
+}
+
+/* Image styling */
+img {
+  max-height: 200px;
+  max-width: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Textarea styling */
+textarea {
+  height: 300px;
+  resize: none;
+  border: 1px solid #444;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #f8f6f6;
+  color: #180101;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #ffcc00;
+  background-color: #faf9f9;
+}
+
+/* Submit button styling */
+.submit-button {
+  position: relative;
+  background-color: #ff4d4d;
+  color: #b76c6c;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: -5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #42f312;
+  transform: translateY(-5px);
+}
+
+/* Submit button text styling */
+.submit-button-text {
+  color: #f2f2f2;
+  transition: all 0.2s;
+}
+
+.submit-button:disabled {
+  background-color: #e80202;
+  color: #f2f2f2;
+  opacity: 60%;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: not-allowed;
+}
+
+/* Loading spinner animation */
+.submit-button--loading .submit-button-text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.submit-button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #f2f2f2;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
